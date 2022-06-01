@@ -1,17 +1,21 @@
 <script>
-  import Router from 'svelte-spa-router';
-  import routes from './routes';
-  import Register from "./views/Register.svelte";
-  import Login from "./views/Login.svelte";
-	export let url = "";
 </script>
 
 <main>
-	 <Router {routes} />
+  <h3>Register</h3>
+  <form>
+    <div class="container">
+      <label><b>Email</b></label>
+      <input type="text" placeholder="example@email.com" name="email" required>
+      
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter password" name="password" required>
+    </div>
+  </form>
 </main>
 
 <style>
-   div, h3, h5, p, a {
+ div, h3, h5, p, a {
         float: center;
         text-align: center;
     }
