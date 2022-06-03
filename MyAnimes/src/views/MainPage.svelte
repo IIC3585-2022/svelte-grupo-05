@@ -1,10 +1,23 @@
+<script>
+	import Input from '../components/Input.svelte';
+</script>
+
 <main>
-  <h1>Hello {name}!</h1>
-  <ul>
+  <h1>My Animes!</h1>
+
+  <!-- <ul>
     <li><a href="#/register">Register</a></li>
-  </ul>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  </ul> -->
+
+	<Input></Input>	
+
+
+
+  
+  <!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
 </main>
+
+
 
 <style>
 	main {
