@@ -1,0 +1,80 @@
+<script>
+</script>
+
+<main>
+  <h3>Login</h3>
+  <form>
+    <div class="container">
+      <b>Email</b>
+      <input type="text" placeholder="example@email.com" name="email" required>
+      
+      <b>Password</b>
+      <input type="password" placeholder="Enter password" name="password" required>
+    </div>
+  </form>
+</main>
+
+<style>
+ div, h3 {
+        float: center;
+        text-align: center;
+    }
+    h3 {
+    color: white;
+    } 
+    h3 {
+        font-size: 5rem;
+    }
+    /* h5 {
+        font-size: 1.5rem;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    } */
+    div {
+        text-align: center;
+        padding-top: 100px;
+        min-height: 100%;
+    }
+    form {
+        width: 420px;
+        padding-top: 40px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* button {
+        background-color: #03c04a;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+    }
+    button:hover {
+        opacity: 1;
+    } */
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+        width: 400px;
+    }
+    input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    /* .links {
+        padding-top: 20px;
+    } */
+    .container {
+        padding: 16px;
+        background-color: white;
+        width: 420px;
+        border-radius: 10px;
+    }	
+</style>
