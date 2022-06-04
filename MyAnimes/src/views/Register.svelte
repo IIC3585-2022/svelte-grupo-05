@@ -1,34 +1,63 @@
 <script>
+    let email = '';
+    let password = '';
+
+    const handleSubmit = async () => {        
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            email,
+            password
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("https://vue-grupo5-backend.herokuapp.com/api/user/", requestOptions)
+        .then(response => response.json())
+        .then(result => {
+            if (!result.message) {
+                alert("Tu cuenta ha sido creada exitosamente!"); 
+                window.location.replace('/#/login'); 
+            }
+            else {
+                alert(`${result.message}`);
+            }
+        })
+        .catch(error => alert(`Error: ${error}`));
+    }
 </script>
 
 <main>
   <h3>Register</h3>
-  <form>
+  <form on:submit|preventDefault={() => handleSubmit()}>
     <div class="container">
-      <label><b>Email</b></label>
-      <input type="text" placeholder="example@email.com" name="email" required>
+      <label for="email"><b>Email</b></label>
+      <input bind:value={email} type="text" placeholder="example@email.com" name="email" required>
       
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter password" name="password" required>
+      <label for="password"><b>Password</b></label>
+      <input bind:value={password} type="password" placeholder="Enter password" name="password" required>
+
+      <button type="submit">Sign Up</button>
     </div>
   </form>
 </main>
 
 <style>
- div, h3, h5, p, a {
+ div, h3 {
         float: center;
         text-align: center;
     }
-    h3, h5, p {
+    h3 {
     color: white;
     } 
     h3 {
         font-size: 5rem;
-    }
-    h5 {
-        font-size: 1.5rem;
-        padding-top: 50px;
-        padding-bottom: 50px;
     }
     div {
         text-align: center;
@@ -67,9 +96,6 @@
     input[type=text]:focus, input[type=password]:focus {
         background-color: #ddd;
         outline: none;
-    }
-    .links {
-        padding-top: 20px;
     }
     .container {
         padding: 16px;
