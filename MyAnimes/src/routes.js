@@ -6,5 +6,6 @@ import MainPage from './views/MainPage.svelte';
 export default {
   '/register': Register,
   '/login': Login,
+  '/myAnimes': MyAnimes,
   '/': MainPage,
 }

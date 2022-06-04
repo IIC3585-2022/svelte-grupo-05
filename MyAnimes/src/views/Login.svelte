@@ -1,4 +1,8 @@
 <script>
+    import { push } from 'svelte-spa-router';
+    import { get } from 'svelte/store';
+    import { token, user } from '../store.js';
+
     let email = "";
     let password = "";
 
@@ -13,21 +17,19 @@
         });
 
         var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
         };
 
         await fetch("https://vue-grupo5-backend.herokuapp.com/api/login", requestOptions)
             .then(response => response.json())
             .then(result => {
-                //logged=true;
-                console.log(result);
-                //store.dispatch('addToken', result.token);
-                //store.dispatch('addEmail', event.target.elements.email.value)
-                //router.push({path: "/"});
-                //window.location.replace("/");
+                if (result.error) {return alert(`Error: ${result.error}`)}
+                token.set(result.token);
+                user.set(email);
+                push("/");
             })
             .catch(error => console.log('error', error));
     }

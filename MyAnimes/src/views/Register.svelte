@@ -1,4 +1,6 @@
 <script>
+    import { push } from 'svelte-spa-router';
+
     let email = '';
     let password = '';
 
@@ -23,7 +25,7 @@
         .then(result => {
             if (!result.message) {
                 alert("Tu cuenta ha sido creada exitosamente!"); 
-                window.location.replace('/#/login'); 
+                push('/login'); 
             }
             else {
                 alert(`${result.message}`);
