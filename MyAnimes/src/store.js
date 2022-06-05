@@ -6,5 +6,5 @@ export const user = writable('')
 
 export const myAnimes = writable([]);
 export const updateMyAnimes = (newAnime) => {
-    myAnimes.set([...get(myAnimes), newAnime])
+    myAnimes.set([...get(myAnimes), newAnime]);
 }

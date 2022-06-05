@@ -1,7 +1,8 @@
 <script>
-    import { push } from 'svelte-spa-router';
+    import { push,link } from 'svelte-spa-router';
+    import { get} from 'svelte/store';
     import { token } from '../store.js';
-
+    
     const handleLogOut = () => {
         token.set('');
     };
@@ -9,7 +10,14 @@
 
 <ul>
     <li><a href="/#/allanimes" class="logo">Home</a></li>
-    <li class="my-animes"><a href="/#/myAnimes">My Animes</a></li>
+    
+    {#if !get(token)}
+        <li><a href="/register" use:link>Register</a></li>
+        <li><a href="/login" use:link>Login</a></li>
+    {:else}
+        <li class="my-animes"><a href="/#/myAnimes">My Animes</a></li>
+    {/if}
+
     <li class="log-user" on:click={ handleLogOut }><a href="/" class="about">Log Out</a></li>
 </ul>
 

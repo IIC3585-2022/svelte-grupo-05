@@ -10,7 +10,7 @@ export default {
   '/register': Register,
   '/login': Login,
   '/myAnimes': MyAnimes,
-  '/': MainPage,
+  '/': HomePage,
   '/anime/:id': AnimeProfile,
   '/allanimes': HomePage
 }

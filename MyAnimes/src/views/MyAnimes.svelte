@@ -1,9 +1,12 @@
 <script>
     import { get } from 'svelte/store';
     import { onMount } from 'svelte';
-    import { token, updateMyAnimes, myAnimes } from '../store.js';
+    import { token, updateMyAnimes} from '../store.js';
+    import Anime from '../components/Anime.svelte';
+    import Navbar from '../components/Navbar.svelte';
 
     let isLoading = true;
+    let myAnimes = [];
 
     onMount( async() => {
         let animeIds = [];
@@ -28,25 +31,30 @@
             .then(data => {
                 if (data.data) 
                 {
-                    updateMyAnimes(data.data);
+                    if (!myAnimes.includes(data.data)) myAnimes = [...myAnimes, data.data];
                 }
 
             });
         }
-        console.log("My animes:");
-        console.log(get(myAnimes));
         isLoading = false;
     })
 
 </script>
 
-<template>
+<main>
+    <Navbar></Navbar>
     {#if !isLoading}
         <div class="all-cards">
-
+            { #each myAnimes as { title,images, mal_id } }
+                <Anime
+                title = {title}
+                poster = {images.jpg.image_url}
+                mal_id = {mal_id}
+                />
+            {/each}
         </div>
     {/if}
-</template>
+</main>
 
 <style scoped>
 
