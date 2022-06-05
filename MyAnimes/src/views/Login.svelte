@@ -1,6 +1,5 @@
 <script>
     import { push } from 'svelte-spa-router';
-    import { get } from 'svelte/store';
     import { token, user } from '../store.js';
 
     let email = "";
@@ -37,7 +36,7 @@
 
 
 <main>    
-    <h3>Log In</h3>
+    <h1>Log In</h1>
     <form on:submit|preventDefault={() => handleLogin()}>
         <div class="container">
             <label for="uname"><b>Email</b></label>
@@ -56,19 +55,19 @@
 </main>
 
 <style scoped>
-    div, h3 {
+    div {
         float: center;
         text-align: center;
     }
 
-    h3 {
-    color: white;
-    } 
-
-    h3 {
-        font-size: 5rem;
-    }
-
+    h1 {
+		color: #ff3e00;
+		text-transform: uppercase;
+		font-size: 4em;
+		font-weight: 100;
+        text-align: center;
+        float: center;
+	}
     div {
         text-align: center;
         padding-top: 100px;

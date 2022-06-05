@@ -21,7 +21,7 @@
         
         await fetch("https://vue-grupo5-backend.herokuapp.com/api/user/anime", requestOptions)
             .then(response => response.json())
-            .then(result => console.log(result))
+            .then(result => {console.log(result); alert("Se ha agregado el anime a tu lista.")})
             .catch(error => console.log('error', error));
     };
 </script>

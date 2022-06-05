@@ -1,5 +1,5 @@
 <script>
-    import { push,link } from 'svelte-spa-router';
+    import { link } from 'svelte-spa-router';
     import { get} from 'svelte/store';
     import { token } from '../store.js';
     
@@ -41,9 +41,6 @@
         text-decoration: none;
     }
     li a:hover:not(.active) {
-        background-color: #111;
-    }
-    .active {
         background-color: #111;
     }
     

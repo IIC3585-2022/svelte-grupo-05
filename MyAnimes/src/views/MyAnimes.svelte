@@ -1,7 +1,7 @@
 <script>
     import { get } from 'svelte/store';
     import { onMount } from 'svelte';
-    import { token, updateMyAnimes} from '../store.js';
+    import { token } from '../store.js';
     import Anime from '../components/Anime.svelte';
     import Navbar from '../components/Navbar.svelte';
 
