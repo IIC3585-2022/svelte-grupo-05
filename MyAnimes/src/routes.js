@@ -7,6 +7,7 @@ import AnimeProfile from './views/AnimeProfile.svelte';
 export default {
   '/register': Register,
   '/login': Login,
+  '/myAnimes': MyAnimes,
   '/': MainPage,
   '/anime/:id': AnimeProfile,
 }

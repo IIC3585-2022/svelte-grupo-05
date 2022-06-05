@@ -1,23 +1,16 @@
 <script>
-	import Input from '../components/Input.svelte';
+	import {link} from 'svelte-spa-router'
 </script>
 
 <main>
-  <h1>My Animes!</h1>
-
-  <!-- <ul>
-    <li><a href="#/register">Register</a></li>
-  </ul> -->
-
-	<Input></Input>	
-
-
-
-  
-  <!-- <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p> -->
+  <h1>Hello !</h1>
+  <ul>
+    <li><a href="/register" use:link>Register</a></li>
+	<li><a href="/login" use:link>Login</a></li>
+	<li><a href="/myAnimes" use:link>myAnimes</a></li>
+  </ul>
+	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
-
-
 
 <style>
 	main {
