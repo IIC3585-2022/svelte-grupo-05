@@ -3,7 +3,6 @@
     export let title,poster,mal_id
 
     const handleClick = () => {
-        console.log("wn handleClick")
         push('/anime/id='+mal_id)
     }
 </script>

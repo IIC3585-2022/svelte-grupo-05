@@ -2,6 +2,7 @@
     import { onMount } from 'svelte';
     import AnimeInfo from './../components/AnimeInfo.svelte';
     import AnimeComments from './../components/AnimeComments.svelte';
+    import Navbar from './../components/Navbar.svelte';
 
     let loadingAnimeData = true
     let animeData = ''
@@ -13,11 +14,11 @@
                 animeData = data || ''
                 loadingAnimeData = false
             });
-    })
-
+    });
 </script>
 
 <main>
+    <Navbar />
     {#if animeData}
         <AnimeInfo 
             title = {animeData.data.title} 

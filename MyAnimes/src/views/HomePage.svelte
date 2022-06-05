@@ -1,9 +1,11 @@
 <script>
 	import Input from '../components/Input.svelte';
+    import Navbar from './../components/Navbar.svelte';
 </script>
 
 <main>
-    <h1>My Animes!</h1>
+	<Navbar />
+    <h1>All Animes!</h1>
     <Input></Input>	
 </main>
 

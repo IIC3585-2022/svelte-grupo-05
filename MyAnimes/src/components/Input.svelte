@@ -1,10 +1,13 @@
 <script>
+    import { onMount } from 'svelte';
     import Anime from './Anime.svelte'
 
     let value = ''
     let loading = true
     let text = ''
     let response = []
+
+
 
     const handleSubmit = async () => {
 		 await fetch(`https://api.jikan.moe/v4/anime?q=${text}&sfw`)
@@ -14,8 +17,18 @@
             response = apiResponse.data || []
             loading = false
         });  
+    
   
     }
+
+    onMount ( async () => {
+        await fetch('https://api.jikan.moe/v4/top/anime')
+            .then(res => res.json())
+            .then(data => {
+                response = data.data
+                loading = false
+            });
+    })
 </script>
 
 

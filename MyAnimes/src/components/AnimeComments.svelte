@@ -37,7 +37,7 @@
         .catch(err => console.log("ERR: ", err))
     }
 
-    onMount( async() => {
+    onMount( async () => {
         await fetch(`https://vue-grupo5-backend.herokuapp.com/api/review/anime/${location.href.split("=")[1]}`, {
             method: 'GET',
             redirect: 'follow'
