@@ -56,11 +56,12 @@
         text-align: center;
     }
     h3 {
-    color: white;
+      color: white;
     } 
     h3 {
         font-size: 5rem;
     }
+
     div {
         text-align: center;
         padding-top: 100px;
@@ -73,7 +74,7 @@
         margin-left: auto;
         margin-right: auto;
     }
-    button {
+    /* button {
         background-color: #03c04a;
         color: white;
         padding: 16px 20px;
@@ -85,7 +86,7 @@
     }
     button:hover {
         opacity: 1;
-    }
+    } */
     input[type=text], input[type=password] {
         width: 100%;
         padding: 15px;

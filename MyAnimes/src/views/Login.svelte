@@ -81,7 +81,6 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-
     }
 
     button {
@@ -108,7 +107,7 @@
         background: #f1f1f1;
         width: 400px;
     }
-
+  
     input[type=text]:focus, input[type=password]:focus {
         background-color: #ddd;
         outline: none;
