@@ -3,7 +3,8 @@
   import routes from './routes';
   import Register from "./views/Register.svelte";
   import Login from "./views/Login.svelte";
-	export let url = "";
+  
+  export const url = "";
 </script>
 
 <main>
@@ -11,7 +12,7 @@
 </main>
 
 <style>
-   div, h3, h5, p, a {
+   /* div, h3, h5, p, a {
         float: center;
         text-align: center;
     }
@@ -72,5 +73,5 @@
         background-color: white;
         width: 420px;
         border-radius: 10px;
-    }	
+    }	 */
 </style>
