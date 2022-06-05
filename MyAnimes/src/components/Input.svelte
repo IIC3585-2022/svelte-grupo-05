@@ -30,10 +30,11 @@
 
 {#if response}
 
-{#each response as {title,images}}
+{ #each response as { title,images, mal_id } }
     <Anime 
     title = {title}
     poster = {images.jpg.image_url}
+    mal_id = {mal_id}
     />
 {/each}
 
