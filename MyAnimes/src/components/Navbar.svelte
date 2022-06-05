@@ -1,7 +1,7 @@
 <script>
     import { link } from 'svelte-spa-router';
     import { get} from 'svelte/store';
-    import { token } from '../store.js';
+    import { token, navbarMessage } from '../store.js';
     
     const handleLogOut = () => {
         token.set('');
@@ -17,7 +17,7 @@
     {:else}
         <li class="my-animes"><a href="/#/myAnimes">My Animes</a></li>
     {/if}
-
+    {$navbarMessage}
     <li class="log-user" on:click={ handleLogOut }><a href="/" class="about">Log Out</a></li>
 </ul>
 
