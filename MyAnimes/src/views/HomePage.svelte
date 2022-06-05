@@ -1,14 +1,10 @@
 <script>
-	import {link} from 'svelte-spa-router'
+	import Input from '../components/Input.svelte';
 </script>
 
 <main>
-  <h1>Hello !</h1>
-  <ul>
-    <li><a href="/register" use:link>Register</a></li>
-	<li><a href="/login" use:link>Login</a></li>
-	<li><a href="/myAnimes" use:link>myAnimes</a></li>
-  </ul>
+    <h1>My Animes!</h1>
+    <Input></Input>	
 </main>
 
 <style>

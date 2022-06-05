@@ -29,7 +29,7 @@
                 if (result.error) {return alert(`Error: ${result.error}`)}
                 token.set(result.token);
                 user.set(email);
-                push("/");
+                push("/allanimes");
             })
             .catch(error => console.log('error', error));
     }

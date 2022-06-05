@@ -1,6 +1,29 @@
 <script>
-    import { push } from 'svelte-spa-router';
+    import { get } from 'svelte/store';
+    import { token } from '../store.js';
+
     export let title,poster,mal_id,synopsis
+
+    const addToList = async() => {
+
+        var myHeaders = new Headers();
+
+        myHeaders.append("Authorization", "Bearer " + get(token));
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({ "animeId": mal_id });
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+        
+        await fetch("https://vue-grupo5-backend.herokuapp.com/api/user/anime", requestOptions)
+            .then(response => response.json())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    };
 </script>
 
 <article>
@@ -9,7 +32,7 @@
         <div class="card__content">
             <div class="card__image card__image--fence">
                 <img src={poster} alt={title}/>
-                <div class="div-button"><button> Add to My Animes</button></div>
+                <div class="div-button"><button on:click={ addToList }> Add to My Animes</button></div>
             </div>
             <p class="card__text">{ synopsis }</p>
         </div>

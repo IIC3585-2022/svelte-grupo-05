@@ -1,4 +1,5 @@
 <script>
+    import { get } from 'svelte/store';
     import { onMount } from 'svelte';
     import { user } from '../store.js';
 
@@ -12,7 +13,7 @@
 
         var raw = JSON.stringify({
             "animeId": parseInt(location.href.split("=")[1]),
-            "email": user,
+            "email": get(user),
             "text": event.target.elements.review.value
         });
 
